@@ -1,0 +1,13 @@
+<h3>{{fa-icon icon="fa-cog" spin=isOpen}} Connection is {{if isOpen 'open' 'closed'}}</h3>
+<button {{action 'reset'}} class="btn btn-info">{{fa-icon icon="step-backward"}}</button>
+{{#if isOpen}}
+  <button {{action 'stop'}} class="btn btn-danger">{{fa-icon icon="pause"}}</button>
+{{else}}
+  <button {{action 'start'}} class="btn btn-success">{{fa-icon icon="play"}}</button>
+{{/if}}
+
+<h3 class="sum">{{number-format sum decimals=0}}</h3>
+
+{{#each numbers as |number|}}
+  <div>+ {{number-format number decimals=0}}</div>
+{{/each}}
